@@ -76,6 +76,10 @@ class IntegrationFinderTest < Test::Unit::TestCase
     assert_equal StateMachine::Integrations::Sequel, StateMachine::Integrations.find_by_name(:sequel)
   end
   
+  def test_should_find_couch_potato
+    assert_equal StateMachine::Integrations::CouchPotato, StateMachine::Integrations.find_by_name(:couch_potato)
+  end
+  
   def test_should_raise_an_exception_if_invalid
     exception = assert_raise(StateMachine::IntegrationNotFound) { StateMachine::Integrations.find_by_name(:invalid) }
     assert_equal ':invalid is an invalid integration', exception.message
