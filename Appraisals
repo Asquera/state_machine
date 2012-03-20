@@ -321,3 +321,7 @@ if RUBY_VERSION > "1.8.6"
     gem "dm-sqlite-adapter", "1.2.0"
   end
 end
+
+appraise "couch_potato" do
+  gem "couch_potato"
+end
